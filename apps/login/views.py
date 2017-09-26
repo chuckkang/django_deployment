@@ -9,9 +9,6 @@ def index(request):
 	
 	return render(request, "login/index.html")
 
-def add_book():
-	
-	return render(request, "beltreviewer/addbook.html")
 
 def login(request):
 	#check the login credentials

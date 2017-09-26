@@ -96,13 +96,13 @@ class BookManager(models.Manager):
 
 		return True
 class Book(models.Model):
-	title = CharField(max_length=255)
-	author = CharField(max_length=255)
+	title = models.CharField(max_length=255)
+	author = models.CharField(max_length=255)
 	created_at = models.DateTimeField(auto_now_add = True )
 	updated_at = models.DateTimeField(auto_now = True )
 
 class Review(models.Model):
-	content = TextField()
+	content = models.TextField()
 	rating = models.DecimalField(max_digits=2, decimal_places=1)
 	book = models.ForeignKey(Book, related_name="reviews", on_delete=models.CASCADE)
 	user = models.ManyToManyField(User, related_name="reviews")
